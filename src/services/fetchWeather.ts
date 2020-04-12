@@ -1,6 +1,6 @@
 import fetch from 'node-fetch';
 
-interface IForcast {
+export interface IForcast {
   time: number;
   temperatureHigh: number;
   summary: string;

@@ -1,1 +1,1 @@
-export { default as fetchWeather } from './fetchWeather';
+export { default as fetchWeather, IForcast } from './fetchWeather';
