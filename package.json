@@ -1,0 +1,62 @@
+{
+	"name": "procrastination-tool-vscode",
+	"displayName": "Procrastination Tool",
+	"description": "",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.42.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:extension.procrastination"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"viewsContainers": {
+			"activitybar": [
+				{
+					"id": "procrastination-explorer",
+					"title": "Procrastination",
+					"icon": "assets/logo.svg"
+				}
+			]
+		},
+		"views": {
+			"procrastination-explorer": [
+				{
+					"id": "procrastination-weather",
+					"name": "Weather"
+				}
+			]
+		},
+		"commands": [
+			{
+				"command": "extension.procrastination",
+				"title": "Procrastination Tool"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"lint": "eslint src --ext ts",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile && npm run lint"
+	},
+	"devDependencies": {
+		"@types/glob": "^7.1.1",
+		"@types/mocha": "^7.0.1",
+		"@types/node": "^12.11.7",
+		"@types/vscode": "^1.42.0",
+		"@typescript-eslint/eslint-plugin": "^2.18.0",
+		"@typescript-eslint/parser": "^2.18.0",
+		"eslint": "^6.8.0",
+		"eslint-config-prettier": "^6.10.0",
+		"eslint-plugin-prettier": "^3.1.2",
+		"glob": "^7.1.6",
+		"prettier": "^1.19.1",
+		"typescript": "^3.7.5"
+	}
+}
