@@ -1,16 +1,15 @@
 import * as vscode from 'vscode';
 import { NewsTree } from './';
+import { fetchNews, INewsHeadlines } from '../services';
 
 export class NewsTreeProvider implements vscode.TreeDataProvider<NewsTree> {
   public async getChildren(): Promise<NewsTree[]> {
-    const news = [
-      {
-        text: 'fake news'
-      }
-    ];
+    const newsHeadlines = await fetchNews();
 
-    return news.map((info: any) => {
-      return new NewsTree(info.text);
+    return newsHeadlines.map((article: INewsHeadlines) => {
+      return new NewsTree(article.title, {
+        url: article.url
+      });
     });
   }
 
