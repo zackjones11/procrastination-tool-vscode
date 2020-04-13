@@ -27,7 +27,7 @@
 			"procrastination-explorer": [
 				{
 					"id": "procrastination-quote",
-					"name": "Quote"
+					"name": "Quote of the day"
 				},
 				{
 					"id": "procrastination-weather",
@@ -35,7 +35,7 @@
 				},
 				{
 					"id": "procrastination-news",
-					"name": "News"
+					"name": "News Headlines"
 				}
 			]
 		},
