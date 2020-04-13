@@ -39,6 +39,10 @@
 			{
 				"command": "extension.procrastination",
 				"title": "Procrastination Tool"
+			},
+			{
+				"command": "procrastination-news-open-article",
+        "title": "News Article"
 			}
 		]
 	},

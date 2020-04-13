@@ -6,18 +6,36 @@ import { NewsTreeProvider } from './NewsTree';
 
 dotenv.config({ path: path.join(__filename, '..', '..', '.env') });
 
-export function activate() {
+interface IClickableTreeItem extends vscode.TreeItem {
+  handleItemClicked: () => void;
+}
+
+function activateWeather() {
   vscode.window.registerTreeDataProvider(
     'procrastination-weather',
     new WeatherTreeProvider()
   );
+}
+
+function activateNews() {
+  const newsTreeProvider = new NewsTreeProvider();
 
   vscode.window.registerTreeDataProvider(
     'procrastination-news',
-    new NewsTreeProvider()
+    newsTreeProvider
   );
 
+  vscode.commands.registerCommand(
+    'procrastination-news.selectNode',
+    (item: IClickableTreeItem) => item.handleItemClicked()
+  );
+}
+
+export function activate() {
   vscode.commands.registerCommand('extension.procrastination', () => {
-    // registered
+    // registered activation
   });
+
+  activateWeather();
+  activateNews();
 }

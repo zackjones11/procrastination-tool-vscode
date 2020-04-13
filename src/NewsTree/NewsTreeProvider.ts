@@ -7,9 +7,17 @@ export class NewsTreeProvider implements vscode.TreeDataProvider<NewsTree> {
     const newsHeadlines = await fetchNews();
 
     return newsHeadlines.map((article: INewsHeadlines) => {
-      return new NewsTree(article.title, {
+      const item = new NewsTree(article.title, {
         url: article.url
       });
+
+      item.command = {
+        command: 'procrastination-news.selectNode',
+        title: 'Select Article',
+        arguments: [item]
+      };
+
+      return item;
     });
   }
 
