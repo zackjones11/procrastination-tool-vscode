@@ -39,12 +39,15 @@ function activateNews() {
   );
 }
 
-export function activate() {
-  vscode.commands.registerCommand('extension.procrastination', () => {
-    // registered activation
-  });
-
+function activeViews() {
   activateQuote();
   activateWeather();
   activateNews();
+}
+
+export function activate() {
+  vscode.commands.registerCommand('extension.procrastination', activeViews);
+
+  const dayInMilliseconds = 1000 * 60 * 60 * 24;
+  setInterval(activeViews, dayInMilliseconds);
 }
