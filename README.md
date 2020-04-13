@@ -1,5 +1,7 @@
 # Procrastination Tool VSCode
 
+![Procrastination Tool VSCode Preview](assets/preview.gif)
+
 ### Setting up API keys
 
 1) Regiser for a free account at [Dark Sky API](https://darksky.net/dev/)
